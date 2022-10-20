@@ -12,7 +12,7 @@
                 <div class="header-form">
                     <div class="d-flex justify-content-between mb-3">
                         <div>
-                            <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success" aria-current="page" href="#">Agregar</a>
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary" aria-current="page" href="#">Agregar producto</a>
                         </div>
                     </div>
                 </div>
@@ -20,14 +20,12 @@
 
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre Producto</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre </th>
                             <th scope="col">Descripcion</th>
-                            <th scope="col">precio</th>
-                            <th scope="col">imagen</th>
-                            <th scope="col">Categoria</th>
-                            <th scope="col">Proveedor</th>
-                            <th scope="col">Editar/Eliminar</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Archivo</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,11 +35,8 @@
                             <td>{{ this.nombre }}</td>
                             <td>{{ this.descripcion }}</td>
                             <td>${{ this.precio }}</td>
-                            <td>
-                                <img class="img-fluid" width="50" src="./upload/{{ this.imagen }}" alt="">
-                            </td>
-                            <td>{{ this.categoria.nombre }}</td>
-                            <td>{{ this.proveedor.nombre }}</td>
+                            <td>${{ this.archivo }}</td>
+
                             <td>
                                 <div class="d-flex justify-content-around">
                                     <a href="/productos/edit/{{this._id}}" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
@@ -79,33 +74,8 @@
                         <input type="text" name="nombre" class="form-control" id="inputEmail4" required>
                     </div>
                     <div class="col-md-4">
-                        <label for="inputPassword4" class="form-label">Nombre Proveedor</label>
-                        <input type="text" name="nombre_prov" class="form-control" id="inputPassword4" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputPassword4" class="form-label">Categoria</label>
-                        <input type="text" name="nombre_cat" class="form-control" id="inputPassword4" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputPassword4" class="form-label">Detalles de Producto</label>
+                        <label for="inputPassword4" class="form-label">Descripcion del Producto</label>
                         <textarea name="descripcion" class="form-control" required></textarea>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputPassword4" class="form-label">Dirección</label>
-                        <textarea name="direccion_prov" class="form-control" required></textarea>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputPassword4" class="form-label">Descripcion</label>
-                        <input type="text" name="descripcion_cat" class="form-control" id="inputPassword4" required>
-                    </div>
-
-                    <div class="col-md-4">
-                        <label for="inputEmail4" class="form-label">Modelo</label>
-                        <input type="text" name="modelo" class="form-control" id="inputEmail4" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputPassword4" class="form-label">Correo</label>
-                        <input type="email" name="email_prov" class="form-control" id="inputPassword4" required>
                     </div>
                     
                     <div class="col-md-4">
@@ -117,13 +87,9 @@
                         <label for="inputAddress" class="form-label">Precio</label>
                         <input type="number" name="precio" min="1"  class="form-control" id="inputAddress" required>
                     </div>                                               
-                    
-                    <div class="col-md-4">
-                        <label for="inputAddress" class="form-label">Telefono</label>
-                        <input type="number" name="telefono_prov" class="form-control" id="inputAddress" required>
-                    </div>
+                
                     <div class="mb-3 col-md-6">
-                        <label for="formFile" class="form-label">imagen </label>
+                        <label for="formFile" class="form-label">Archivo adjunto </label>
                         <input class="form-control"  name="imagen" type="file" id="formFile" required>
                     </div>
 

@@ -20,7 +20,7 @@ router.post('/productos/new', isAuthenticated, async (req,res) =>{
     const archivo = Date.now() + "_" + req.file.originalname;
     const guardarArchivo = async() => {
         const filePatch = req.file.path;
-        const targetPath = path.resolve(`src/public/upload/${imagen}`);
+        const targetPath = path.resolve(`src/public/upload/${archivo}`);
         await fs.rename(filePatch, targetPath); 
     }
     guardarArchivo();
@@ -46,7 +46,7 @@ router.put('/productos/update/:id', isAuthenticated, async (req,res) =>{
     const archivo = Date.now() + "_" + req.file.originalname;
     const filePatch = req.file.path;
     const guardarArchivo = async() => {
-        const targetPath = path.resolve(`src/public/upload/${imagen}`);
+        const targetPath = path.resolve(`src/public/upload/${archivo}`);
         await fs.rename(filePatch, targetPath); 
     }
 

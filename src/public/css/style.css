@@ -1,0 +1,19 @@
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+  
+  div.w-33 {
+    width: 33.33%;
+    background-color: orange;
+  }
+  
+  div.center {
+    text-align: center;
+  }
+  
+  button {}
+
+  
