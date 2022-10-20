@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-5 m-auto">
+        <div class="card">
+        <div class="card-header">
+            <h4>Actualizar usuario</h4>
+        </div>
+        <div class="card-body">
+            <form action="/users/update/{{user._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <input name="name" value="{{ user.name }}" type="text" placeholder="Nombre usuario" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input name="last_name" value="{{ user.last_name }}" type="text" placeholder="Apellido" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input name="phone" value="{{ user.phone }}" type="text" placeholder="Celular" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input name="email" value="{{ user.email }}" type="text" placeholder="Email" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-outline-success">Actualizar usuario</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
