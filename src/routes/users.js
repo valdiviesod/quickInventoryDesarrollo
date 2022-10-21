@@ -95,6 +95,19 @@ router.post("/users/signup", async (req, res) => {
 	}
 });
 
+router.post('/users/new', isAuthenticated, async (req,res) =>{
+    const { name,email,password } = req.body;
+    
+    const newUser = new User({
+        name,
+        email,
+        password,
+    });
+    await newUser.save();
+    res.redirect('/users');
+    
+})
+
 router.get("/users/logout", (req, res) => {
 	req.logout(req.user, err => {
 	  if(err) return next(err);
